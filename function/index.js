@@ -134,7 +134,7 @@ function delegateRendering(
 
       lambda.invoke(
         {
-          FunctionName: "testCanvasLambda",
+          FunctionName: process.env.RENDERER_LAMBDA_NAME,
           Payload: JSON.stringify(workerPayload, null, 2) // pass params
         },
         function(err, data) {
