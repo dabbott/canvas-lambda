@@ -1,0 +1,27 @@
+{
+  "name": "canvas-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-awslambda": "^0.5.0",
+    "gulp-zip": "^4.0.0",
+    "throttled-queue": "^1.0.5",
+    "untildify": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "invoke": "aws lambda invoke --function-name $RENDERER_LAMBDA_NAME test.mp4",
+    "curl": "curl -m 300 --connect-timeout 300 -H \"accept: video/mp4\" -H \"content-type: video/mp4\" $RENDERER_TEST_ENDPOINT -o test.mp4",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update": "gulp update",
+    "new": "gulp new",
+    "list": "aws lambda list-functions",
+    "copy:bodymovin": "cp $BODYMOVIN_REPO_PATH/build/player/bodymovin.js function/vendor/"
+  },
+  "author": "",
+  "license": "ISC"
+}
